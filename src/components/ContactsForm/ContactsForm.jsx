@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 
 import { Form, FormInput, Label, SubmitBtn } from '../App.styled';
 
@@ -10,7 +10,7 @@ export const ContactsForm = () => {
   const [phone, setNumber] = useState('');
 
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
 
   const onChange = e => {
     switch (e.target.name) {
